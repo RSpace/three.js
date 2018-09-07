@@ -300,7 +300,9 @@ function WebGLRenderer( parameters ) {
 
 	// vr
 
-	var vr = ( 'xr' in navigator ) ? new WebXRManager( _this ) : new WebVRManager( _this );
+  // HACK: Needed until A-Frame supports WebXR, see https://github.com/aframevr/aframe/issues/3672
+  // var vr = ( 'xr' in navigator ) ? new WebXRManager( _this ) : new WebVRManager( _this );
+  var vr =  new WebVRManager( _this );
 
 	this.vr = vr;
 
